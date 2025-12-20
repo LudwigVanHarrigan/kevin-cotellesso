@@ -29,7 +29,7 @@ const portfolioConfig = {
             thumb: "assets/images/thumbnails/sample2.jpg",
             title: "Sample Image 2",
             description: "Description of the image"
-        }
+        },
         // Add more images here
     ],
     
@@ -40,7 +40,7 @@ const portfolioConfig = {
             src: "assets/videos/sample-video.mp4",
             title: "Sample Video",
             description: "Description of the video"
-        }
+        },
         // Add more videos here
     ],
     
@@ -51,7 +51,7 @@ const portfolioConfig = {
             src: "assets/audio/sample-audio.mp3",
             title: "Sample Audio Track",
             description: "Description of the audio"
-        }
+        },
         // Add more audio files here
     ],
     
@@ -63,7 +63,7 @@ const portfolioConfig = {
             title: "Sample Document",
             description: "Description of the document",
             icon: "📄"
-        }
+        },
         // Add more documents here
     ]
 };

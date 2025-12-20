@@ -199,7 +199,9 @@ function initModal() {
 // Update copyright year
 function updateYear() {
     const yearSpan = document.getElementById('year');
-    yearSpan.textContent = new Date().getFullYear();
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
 }
 
 // Lazy loading for images (optional enhancement)
