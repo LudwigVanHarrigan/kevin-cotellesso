@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kevin Cotellesso Portfolio - Showcasing creative work and projects">
+    <title>Kevin Cotellesso - Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Kevin Cotellesso</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#videos">Videos</a></li>
+                <li><a href="#audio">Audio</a></li>
+                <li><a href="#documents">Documents</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>Welcome to My Portfolio</h2>
+                <p>Explore my creative work across multiple mediums</p>
+            </div>
+        </section>
+
+        <section id="gallery" class="section">
+            <div class="container">
+                <h2>Photo Gallery</h2>
+                <div id="gallery-grid" class="gallery-grid">
+                    <!-- Gallery items will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <section id="videos" class="section">
+            <div class="container">
+                <h2>Video Portfolio</h2>
+                <div id="video-grid" class="video-grid">
+                    <!-- Video items will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <section id="audio" class="section">
+            <div class="container">
+                <h2>Audio Works</h2>
+                <div id="audio-list" class="audio-list">
+                    <!-- Audio items will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <section id="documents" class="section">
+            <div class="container">
+                <h2>Documents & Publications</h2>
+                <div id="document-list" class="document-list">
+                    <!-- Document items will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <h2>Get In Touch</h2>
+                <div class="contact-info">
+                    <p>Email: <a href="mailto:contact@example.com">contact@example.com</a></p>
+                    <p>LinkedIn: <a href="#" target="_blank">linkedin.com/in/kevincotellesso</a></p>
+                    <p>GitHub: <a href="#" target="_blank">github.com/kevincotellesso</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> Kevin Cotellesso. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modal for image viewing -->
+    <div id="modal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-img">
+        <div id="caption"></div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
