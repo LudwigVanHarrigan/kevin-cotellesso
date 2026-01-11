@@ -27,12 +27,6 @@ const portfolioConfig = {
             title: "Urban Lights",
             category: "Photography",
             link: "photography/project1.html"
-        },
-        {
-            image: "assets/images/gallery/photo3.png",
-            title: "Architectural Details",
-            category: "Mechanical Design",
-            link: "mechanical-design/project1.html"
         }
     ],
 
@@ -45,7 +39,6 @@ const portfolioConfig = {
             { title: "Diffusion Modeling", link: "research/diffusion-modeling.html" }
         ],
         mechanical: [
-            { title: "Architectural Details", link: "mechanical-design/project1.html" },
             { title: "Articulated Compliant Gripper", link: "mechanical-design/articulated-gripper.html" },
             { title: "Compliant Finger Design", link: "mechanical-design/compliant-finger.html" },
             { title: "Shade Shifter", link: "mechanical-design/shade-shifter.html" },

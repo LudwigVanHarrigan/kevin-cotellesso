@@ -1,14 +1,13 @@
 // Main JavaScript for Portfolio Website
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Initialize all components
-    initNavigation();
-    initSmoothScroll();
-    initHighlights();
-    // initModal(); // Modal might be needed for project pages, keeping it but unused on home for now
-    updateYear();
-    initModal();
-    updateYear();
+    // Initialize all components with error handling
+    try { initNavigation(); } catch (e) { console.error('Navigation init failed:', e); }
+    try { initSmoothScroll(); } catch (e) { console.error('SmoothScroll init failed:', e); }
+    try { initHighlights(); } catch (e) { console.error('Highlights init failed:', e); }
+    try { initModal(); } catch (e) { console.error('Modal init failed:', e); }
+    try { initSlideshows(); } catch (e) { console.error('Slideshow init failed:', e); }
+    try { updateYear(); } catch (e) { console.error('Year update failed:', e); }
 });
 
 // Mobile and Dynamic Navigation
@@ -229,4 +228,46 @@ if ('IntersectionObserver' in window) {
     document.querySelectorAll('img[data-src]').forEach(img => {
         imageObserver.observe(img);
     });
+}
+
+// Slideshow Logic
+let slideIndices = {};
+
+function initSlideshows() {
+    const slideshows = document.querySelectorAll('.slideshow-container');
+    slideshows.forEach((ss, index) => {
+        const id = ss.id || `slideshow-${index + 1}`;
+        ss.id = id;
+        slideIndices[id] = 1;
+        showSlides(1, id);
+    });
+}
+
+// Check if functions are exposed globally for inline HTML calls
+// Since we are in a module/file scope, we might need to attach to window if using inline onclick
+window.plusSlides = function (n, slideshowId) {
+    showSlides(slideIndices[slideshowId] += n, slideshowId);
+};
+
+window.currentSlide = function (n, slideshowId) {
+    showSlides(slideIndices[slideshowId] = n, slideshowId);
+};
+
+function showSlides(n, slideshowId) {
+    let i;
+    const container = document.getElementById(slideshowId);
+    if (!container) return;
+
+    const slides = container.getElementsByClassName("mySlides");
+
+    if (slides.length === 0) return;
+
+    if (n > slides.length) { slideIndices[slideshowId] = 1 }
+    if (n < 1) { slideIndices[slideshowId] = slides.length }
+
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    slides[slideIndices[slideshowId] - 1].style.display = "block";
 }

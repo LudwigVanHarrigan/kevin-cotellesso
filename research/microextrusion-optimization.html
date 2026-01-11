@@ -36,12 +36,35 @@
         <section class="section">
             <div class="container project-content">
                 <div class="project-media">
-                    <img id="project-main-image" src="../assets/images/gallery/photo1.png"
-                        alt="Microextrusion Optimization">
+                    <object data="../assets/documents/ME497_FinalReport_Cotellesso_V0.2_body.pdf" type="application/pdf"
+                        width="100%" height="600px" style="border-radius: 8px; box-shadow: var(--shadow);">
+                        <p>Unable to display PDF file. <a
+                                href="../assets/documents/ME497_FinalReport_Cotellesso_V0.2_body.pdf">Download</a>
+                            instead.</p>
+                    </object>
                 </div>
                 <div class="project-description">
                     <h3>About this Project</h3>
-                    <p id="project-description">Optimizing shapes for microextrusion processes.</p>
+                    <p id="project-description">
+                        For my final project in Dr. Dan Stoecklein’s Design Optimization elective, I contributed to his
+                        work developing a design tool for microextrusion die shapes. I started with his tool that
+                        quickly calculates the final shape of a microextrusion given a die shape, then formulated it as
+                        a 10-D standard optimization problem. Then, I compared the performance, number of evaluations,
+                        and wall time of several common optimization algorithms.
+                    </p>
+                    <br>
+                    <h3>Optimization Algorithms Compared</h3>
+                    <ul>
+                        <li><strong>Original Problem:</strong> Each optimization algorithm was asked to maximize the
+                            similarity of an output image to a specified target shape. Initial conditions were either a
+                            circular die or a slightly perturbed version of the “solution” die.</li>
+                        <li><strong>Nelder-Mead:</strong> Performed the best of all three algorithms, finding
+                            satisfactory visual matches and high similarity with only ~500 function iterations.</li>
+                        <li><strong>Particle Swarm Optimization:</strong> Used 3000-4000 function evaluations, but was
+                            able to find highly performant solutions.</li>
+                        <li><strong>Steepest Descent:</strong> Achieved the highest similarity score in most cases, but
+                            required upwards of 7000 function evaluations to do so.</li>
+                    </ul>
                 </div>
             </div>
         </section>

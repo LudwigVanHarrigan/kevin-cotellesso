@@ -35,37 +35,64 @@
 
         <section class="section">
             <div class="container project-content">
-                <div class="project-media">
-                    <img id="project-main-image" src="../assets/images/gallery/gripper_1.png"
-                        alt="Compliant Gripper Finger Design">
-                </div>
-                <div class="project-description">
-                    <h3>About this Project</h3>
-                    <p id="project-description">
-                        (See Articulated Compliant Gripper for shared design methodology)
-                        <br><br>
-                        This project focuses on the design of compliant fingers for robotic gripping applications,
-                        utilizing the same alternate design methodology for compliant mechanisms that mimic rigid-body
-                        mechanisms.
-                    </p>
-                    <br>
-                    <h3>Relevant Skills</h3>
-                    <ul>
-                        <li><strong>3D Printing</strong></li>
-                        <li><strong>Mechanism Design</strong></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+                <div class="project-description" style="grid-column: 1 / -1;">
+                    <h3>MATE Compliant Gripper Design: Continuous Motion Estimation</h3>
+                    <p>I designed the fingers of the MATE Compliant Gripper in SOLIDWORKS by modeling their shape
+                        wrapped around a circular object, and then unwrapping that shape. This results in geometry that
+                        naturally curls around objects when it grabs them, distributing the gripping force.</p>
 
-        <section class="section">
-            <div class="container">
-                <h3>Gallery</h3>
-                <div class="gallery-grid" id="project-gallery">
-                    <!-- Additional images -->
+                    <!-- Slideshow 1 -->
+                    <div class="slideshow-container" id="slideshow-1">
+                        <div class="mySlides fade">
+                            <img src="../assets/images/gripper/gripper_wrapdesign_1.png" style="width:100%">
+                            <div class="text">Wrap Design 1</div>
+                        </div>
+                        <div class="mySlides fade">
+                            <img src="../assets/images/gripper/gripper_wrapdesign_2.png" style="width:100%">
+                            <div class="text">Wrap Design 2</div>
+                        </div>
+                        <div class="mySlides fade">
+                            <img src="../assets/images/gripper/gripper_wrapdesign_3.png" style="width:100%">
+                            <div class="text">Wrap Design 3</div>
+                        </div>
+                        <div class="mySlides fade">
+                            <img src="../assets/images/gripper/gripper_wrapdesign_4.png" style="width:100%">
+                            <div class="text">Wrap Design 4</div>
+                        </div>
+                        <a class="prev" onclick="plusSlides(-1, 'slideshow-1')">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1, 'slideshow-1')">&#10095;</a>
+                    </div>
                 </div>
-            </div>
-        </section>
+
+                <div class="project-description" style="grid-column: 1 / -1; margin-top: 2rem;">
+                    <h3>Rigid Mechanism Estimation</h3>
+                    <p>I implemented an alternate design methodology for compliant mechanisms that mimic rigid-body
+                        mechanisms. This approach involves replacing rigid linkages with thick sections and joints with
+                        thin “hinge” areas. This methodology is well suited for replacing sprung rigid mechanisms, since
+                        the material’s deformation acts as a spring pushing it back to its manufactured position.</p>
+
+                    <!-- Slideshow 2 -->
+                    <div class="slideshow-container" id="slideshow-2">
+                        <div class="mySlides fade">
+                            <img src="../assets/images/gripper/gripper_rigiddesign_1.png" style="width:100%">
+                            <div class="text">Rigid Design 1</div>
+                        </div>
+                        <div class="mySlides fade">
+                            <img src="../assets/images/gripper/gripper_rigiddesign_2.png" style="width:100%">
+                            <div class="text">Rigid Design 2</div>
+                        </div>
+                        <div class="mySlides fade">
+                            <img src="../assets/images/gripper/gripper_rigiddesign_3.png" style="width:100%">
+                            <div class="text">Rigid Design 3</div>
+                        </div>
+                        <div class="mySlides fade">
+                            <img src="../assets/images/gripper/gripper_rigiddesign_4.png" style="width:100%">
+                            <div class="text">Rigid Design 4</div>
+                        </div>
+                        <a class="prev" onclick="plusSlides(-1, 'slideshow-2')">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1, 'slideshow-2')">&#10095;</a>
+                    </div>
+                </div>
     </main>
 
     <footer>
@@ -75,7 +102,7 @@
     </footer>
 
     <script src="../js/config.js?v=2"></script>
-    <script src="../js/main.js?v=2"></script>
+    <script src="../js/main.js?v=3"></script>
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>

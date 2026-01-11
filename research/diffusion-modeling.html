@@ -36,18 +36,34 @@
         <section class="section">
             <div class="container project-content">
                 <div class="project-media">
-                    <img id="project-main-image" src="../assets/images/gallery/photo1.png" alt="Diffusion Modeling">
+                    <img id="project-main-image" src="../assets/images/gallery/diffusion_pretty_picture.png"
+                        alt="Diffusion Modeling Simulation">
                 </div>
                 <div class="project-description">
                     <h3>About this Project</h3>
-                    <p id="project-description">Researchers Mehmet Akif ŞAHİN and Ghulam Destgeer from Technical
-                        University of Munich are modeling the effects of acoustic streaming on low reynolds number flows
-                        of multiple adjacent fluids. I worked with Rose-Hulman’s Dr. Dan Stoecklein to incorporate
-                        diffusion effects into their model, to determine whether diffusion plays an important role in
-                        the output shape of the channel.
+                    <p id="project-description">
+                        Researchers Mehmet Akif ŞAHİN and Ghulam Destgeer from Technical University of Munich are
+                        modeling the effects of acoustic streaming on low reynolds number flows of multiple adjacent
+                        fluids. I worked with Rose-Hulman’s Dr. Dan Stoecklein to incorporate diffusion effects into
+                        their model, to determine whether diffusion plays an important role in the output shape of the
+                        channel.
+                        <br><br>
+                        We determined that diffusion qualitatively affected the output shape of the simulation, and
+                        reduced one of the discrepancies observed between simulation and experimental results.
                     </p>
                 </div>
-            </div>
+                <div class="project-description">
+                    <h3>Gallery</h3>
+                    <div class="gallery-grid" id="project-gallery">
+                        <div class="gallery-item"
+                            onclick="openModal('../assets/images/gallery/diffusion_results.png', 'Simulation Output Diagram')">
+                            <img src="../assets/images/gallery/diffusion_results.png" alt="Simulation Output Diagram">
+                            <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">A diagram showing an example
+                                simulation output. Red and blue represent two separate fluids, and the green plane shows
+                                how the interface between the two is shaped by the acoustic streaming.</p>
+                        </div>
+                    </div>
+                </div>
         </section>
     </main>
 
