@@ -1,0 +1,395 @@
+Kevin
+Cotellesso
+Hello! I’m a senior Mechanical
+Engineering major with minors in
+robotics and artificial intelligence
+(AI) at Rose-Hulman Institute of
+Technology (RHIT).
+
+I have been designing,
+programming and building
+solutions to everyday problems
+for 10 years. I also developed my
+problem solving and teamwork
+skills building and programming
+robots for 12 years as a FIRST
+team member.
+
+When I’m not studying, you’ll find
+me leading the RHIT MATE
+underwater robotics team where
+I indulge my passion of designing
+and improving compliant
+mechanisms and
+elecromechanical systems;
+enjoying the great outdoors on
+my mountain bike; or at the piano
+laying my heart bare in a musical
+composition.
+
+This document presents some of
+my research and several of the
+innovative solutions I’ve created
+for various problems. I hope you
+enjoy reading it!
+
+
+
+
+     (623) 236-5618                    cotellkp@rose-hulman.edu
+JAW-BASED HUMAN-MACHINE
+INTERFACES
+Over the course of ten weeks, I authored a comprehensive literature review on
+the state of the art in human machine interfaces (HMI) that don’t require use of
+the hands, identifying jaw-based HMI as an unexplored research area.
+
+
+
+
+                         Academic Research - 2025
+MICROEXTRUSION SHAPE
+OPTIMIZATION
+For my final project in Dr. Dan Stoecklein’s Design Optimization elective, I
+contributed to his work developing a design tool for microextrusion die shapes.
+I started with his tool that quickly calculates the final shape of a microextrusion
+given a die shape, then formulated it as a 10-D standard optimization problem.
+Then, I compared the performance, number of evaluations, and wall time of
+several common optimization algorithms.
+
+
+                                                     Original Problem: Each
+                                                   optimization algorithm was
+                                                asked to maximize the similarity
+                                                of an output image to a specified
+                                                 target shape. Initial conditions
+                                                  were either a circular die or a
+                                                slightly perturbed version of the
+                                                          “solution” die.
+
+
+
+                                                  Nelder-Mead: Performed the
+                                                   best of all three algorithms,
+                                                    finding satisfactory visual
+                                                 matches and high similarity with
+                                                  only ~500 function iterations.
+
+
+
+
+                                                   Particle Swarm Optimization:
+                                                     Used 3000-4000 function
+                                                  evaluations, but was able to find
+                                                    highly performant solutions.
+
+
+
+
+                                                 Steepest Descent: Achieved the
+                                                 highest similarity score in most
+                                                  cases, but required upwards of
+                                                 7000 function evaluations to do
+                                                                so.
+
+
+
+
+                           Academic Research - 2025
+MODELING DIFFUSION IN
+A MICROFLUIDIC SYSTEM
+Researchers Mehmet Akif ŞAHİN and Ghulam Destgeer from Technical University
+of Munich are modeling the effects of acoustic streaming on low reynolds
+number flows of multiple adjacent fluids. I worked with Rose-Hulman’s Dr. Dan
+Stoecklein to incorporate diffusion effects into their model, to determine
+whether diffusion plays an important role in the output shape of the channel.
+
+
+
+
+                                                                         Inlet
+
+
+
+
+                                                                           Concentration
+                                                                             (mol/m³)
+     Inlet
+
+
+
+
+             A diagram showing an example simulation output. Red and blue represent
+             two separate fluids, and the green plane shows how the interface between
+                            the two is shaped by the acoustic streaming.
+
+
+
+We determined that diffusion qualitatively affected the output shape of the
+simulation, and reduced one of the discrepancies observed between simulation
+and experimental results.
+
+
+
+
+                          Academic Research - 2024-2025
+ARTICULATED
+COMPLIANT GRIPPER
+The MATE ROV Competition is an underwater
+robotics competition where a remotely
+operated submersible must measure and
+manipulate objects 15' below the surface of
+the water. I have been on Rose-Hulman’s team
+for four years.
+My first two years on the team, I designed a
+durable, performant, and easy-to-
+manufacture compliant gripper system.
+The gripper is cable-actuated; a servo
+winch pulls a bicycle shifter cable, which
+runs through a wrist joint along the axis of
+rotation and pulls the gripper closed via a
+bearing. This allows for unlimited rotation
+of the gripper in either direction.
+Its three-finger design can grasp objects of
+various sizes, and its compliant fingers
+distribute gripping force, allowing it to handle
+delicate objects (Red Solo Cup?) without
+damaging them. During our competition, we
+successfully manipulated all underwater
+game elements using this gripper.
+
+
+
+
+                              Robotic Design - 2024
+COMPLIANT GRIPPER
+FINGER DESIGN
+MATE Compliant Finger Design: Continuous Motion Estimation
+I designed the fingers of the MATE Compliant Gripper in SOLIDWORKS by
+modeling their shape wrapped around a circular object, and then
+unwrapping that shape. This results in geometry that naturally curls
+around objects when it grabs them, distributing the gripping force.
+
+
+
+
+Rigid Mechanism Estimation
+I implemented an alternate design methodology for compliant mechanisms
+that mimic rigid-body mechanisms. This approach involves replacing rigid
+linkages with thick sections and joints with thin “hinge” areas. This methodology
+is well suited for replacing sprung rigid mechanisms, since the material’s
+deformation acts as a spring pushing it back to its manufactured position.
+
+
+
+
+ Relevant Skills:
+    3D Printing - Developed slicer settings to print flexible filament with minimal
+    stringing and blobbing
+    Mechanism Design - Used 2D kinematics to design and estimate the motion
+    of continuously deformable mechanisms
+    Rapid Prototyping and Development
+
+
+
+
+                             Robotic Design - 2024
+SHADE SHIFTER
+Problem: When driving west when the sun is setting,
+the intensity of the sun is a hazard to drivers. If the
+sun is low enough in the sky, it is impossible to block
+it with a sun visor without obscuring much of the
+driver’s view.
+
+Solution: I designed and built an
+automatic sun-blocking robot! It detects
+bright lights using a webcam, and uses
+two winches to move a hanging blocker
+between the light and the driver.
+
+Specs:
+   0.8m square 2-axis gantry powered
+   by two Lego EV3 servomotors
+   OpenCV/Python code uses
+   webcam video to detect light
+
+  How does it work?
+  The Shade Shifter uses a Logitech webcam to detect the location of a bright
+  light. It then calculates where the shade needs to be placed to block light from
+  hitting the driver’s eyes.
+  The shade is suspended in the frame with fishing line that is connected to two
+  winches at the frame corners; the (x,y) position of the shade is controlled
+  precisely by spooling the two winches in and out.
+
+
+
+
+ Relevant Skills:
+    Socket Communication - Computer vision code on Linux laptop sent (x,y)
+    coordinates to control code on Lego EV3.
+    Computer vision - Detected bright areas, calculated XY position
+    Inverse Kinematics - Calculated string length for a given XY position
+    Controls - Implemented proportional position feedback control in Python
+
+
+
+                             Everyday Solutions - 2022
+THE WRENCH
+WHISPERER
+Problem: My high school FIRST Robotics Competition Team had bins
+of unsorted allen wrenches that we had to sort through each time
+we needed an allen wrench.
+Solution: I designed, built
+and programmed an
+automatic wrench measurer
+that quickly differentiates
+allen wrench sizes.
+Specs:
+   0.1mm accuracy
+   <0.5s measure time
+   0.5mm min wrench size
+
+
+                                       How does it work?
+                                       The Wrench Whisperer uses computer
+                                       vision techniques to precisely measure
+                                       the size of an allen wrench placed on the
+                                       light box. The secret is in the precision of
+                                       the environment; the light box produces
+                                       a perfect silhouette, and camera
+                                       exposure settings are fixed to ensure
+                                       consistent measurements. Once
+                                       precision is obtained, accuracy is just a
+                                       calibration curve away.
+
+
+
+Relevant Skills:
+   Sensor calibration techniques - achieved 0.1mm precision with HD webcam
+   using precise construction and a lookup table
+   Computer vision - Standardized exposure, cropped, blurred, thresholded,
+   detected contours, measured areas, detected orientation of input image
+   using OpenCV and Python
+   Frame design - ... out of Legos! But was precise and rigid enough to transport
+   and consistently measure 0.1mm accuracy
+   Iterative design - Evaluated and redesigned, used Git for version control
+
+
+
+
+                        Solving Everyday Problems - 2021
+SELF LEVELING
+SOUP BOWL
+Problem: When my family travels, we often
+eat meals in the car. During one one trip, the
+car accelerated, and I spilled my soup...
+
+Solution: I designed and built a 2-axis gimbal
+mounted bowl that automatically tilts to keep
+liquids from spilling when it is moved.
+Specs:
+   2X digital servos
+   On-axis linkage for inner gimbal
+   Arduino 101 with 6-axis IMU to detect local
+   acceleration                                           I used FreeCAD to design
+   Runs on NiMH battery pack                             all 3D printed components.
+
+
+                                            How does it work?
+                                            The “Tilt-A-Bowl” uses its onboard 3-
+                                            axis accelerometer to determine the
+                                            direction of local acceleration. When
+                                            stationary, this acceleration points
+                                            down (gravity), but when accelerating
+                                            sideways, it will have horizontal
+                                            components. The Tilt-A-Bowl uses its 2-
+                                            axis gimbal to keep its surface
+                                            perpendicular to local acceleration, so
+                                            that anything on its surface "feels” only
+                                            downward acceleration.
+
+          Look Mom, No spills!!
+
+ Trigonometry is used to
+ convert local acceleration
+ direction into servo angles.
+
+
+ Relevant Skills:
+    C++/Arduino - Programmed from scratch using Arduino 101 IMU library
+    Design for Assembly - All screw holes are accessible without disassembly.
+    Correct tolerances were included for minimal postprocessing.
+    Design for Manufacturing - Entire system was designed in FreeCAD to be 3D
+    printed with minimal support material.
+    Filtering - Noisy IMU data was filtered with a moving average to smooth
+    response.
+
+
+                             Everyday Solutions - 2019
+DIGITAL TO ANALOG
+AIR COMPRESSOR
+CONVERSION
+Problem: The digital controller on my family’s air
+compressor failed rendering the air compressor useless.
+Solution: I replaced the digital control components with
+analog components and created ed a support for them.
+Seven years later, it still works perfectly.
+
+
+
+
+Relevent skills:
+   CAD Modeling - Designed supports for analog components using FreeCAD
+   Systems Integration - Sourced and integrated pressure switch, regulator,
+   tank pressure gauge and manifold into existing air compressor
+
+
+
+
+                       Solving Everyday Problems - 2018
+ AUTOMATIC
+ CHICKEN DOOR
+Problem: I grew up on a mini-farm where my
+family raised chickens. It was my job to release
+the chickens every morning and pen them up in
+the evenings. This task was boring and menial.
+
+Solution: I built and programmed an automatic
+chicken door that opened and closed in
+response to ambient light intensity. It can be
+installed in between the studs of a chicken
+coop and let chickens in an out in the daytime,
+while keeping them safe at night.
+
+Specs:
+   550 12V brushed DC motor with 30A
+   brushed motor controller                          12yo. me and my automatic
+   4:1 planetary gearbox                                    chicken door.
+   Threaded rod and brass insert nut motion
+   system
+   Drawer slide allows vertical motion while
+   resisting impacts to the door
+   Photoresistor to detect ambient light levels
+   Roller switches to detect whether door is up
+   or down
+
+How does it work?
+In the morning, when it is bright enough
+outside, the photoresistor detects the change
+and an Arduino microcontroller commands the
+motor to start lifting the door. When the door is
+all the way up, a limit switch is pressed, telling
+the Arduino to stop the motor.
+The opposite process occurs when light levels
+drop below a certain amount at night.
+
+
+ Relevant Skills:
+    C++/Arduino - Programmed state machine on Arduino Uno
+    Motor and Gearbox Selection - I learned the hard way that a 550 motor by
+    itself doesn’t have much torque...
+
+
+
+
+                      Solving Everyday Problems - 2016
+

@@ -7,63 +7,76 @@ const portfolioConfig = {
     email: "contact@example.com",
     linkedin: "linkedin.com/in/kevincotellesso",
     github: "github.com/kevincotellesso",
-    
+
     // Hero Section
     hero: {
         title: "Welcome to My Portfolio",
         subtitle: "Explore my creative work across multiple mediums"
     },
-    
-    // Gallery Images
-    // Add your images to assets/images/gallery/ folder
-    // Thumbnails should be placed in assets/images/thumbnails/
-    gallery: [
+
+    // Highlights for Home Page
+    highlights: [
         {
-            src: "assets/images/gallery/sample1.jpg",
-            thumb: "assets/images/thumbnails/sample1.jpg",
-            title: "Sample Image 1",
-            description: "Description of the image"
+            image: "assets/images/gallery/photo1.png",
+            title: "Geometric Harmony",
+            category: "Research",
+            link: "research/project1.html"
         },
         {
-            src: "assets/images/gallery/sample2.jpg",
-            thumb: "assets/images/thumbnails/sample2.jpg",
-            title: "Sample Image 2",
-            description: "Description of the image"
+            image: "assets/images/gallery/photo2.png",
+            title: "Urban Lights",
+            category: "Photography",
+            link: "photography/project1.html"
         },
-        // Add more images here
+        {
+            image: "assets/images/gallery/photo3.png",
+            title: "Architectural Details",
+            category: "Mechanical Design",
+            link: "mechanical-design/project1.html"
+        }
     ],
-    
+
+    // Project Data by Category (for future use/dynamic loading if needed)
+    projects: {
+        research: [
+            { title: "Geometric Harmony", link: "research/project1.html" },
+            { title: "Jaw-based HMI", link: "research/jaw-hmi.html" },
+            { title: "Microextrusion Optimization", link: "research/microextrusion-optimization.html" },
+            { title: "Diffusion Modeling", link: "research/diffusion-modeling.html" }
+        ],
+        mechanical: [
+            { title: "Architectural Details", link: "mechanical-design/project1.html" },
+            { title: "Articulated Compliant Gripper", link: "mechanical-design/articulated-gripper.html" },
+            { title: "Compliant Finger Design", link: "mechanical-design/compliant-finger.html" },
+            { title: "Shade Shifter", link: "mechanical-design/shade-shifter.html" },
+            { title: "Wrench Whisperer", link: "mechanical-design/wrench-whisperer.html" },
+            { title: "Tilt-A-Bowl", link: "mechanical-design/tilt-a-bowl.html" },
+            { title: "Compressor Conversion", link: "mechanical-design/compressor-conversion.html" },
+            { title: "Automatic Chicken Door", link: "mechanical-design/chicken-door.html" },
+            { title: "Chain Mail", link: "mechanical-design/chain-mail.html" }
+        ],
+        photography: [
+            { title: "Urban Lights", link: "photography/project1.html" },
+            { title: "More Photographyyy", link: "photography/project2.html" }
+        ],
+        music: []
+    },
+
     // Video Portfolio
     // Add your videos to assets/videos/ folder
     videos: [
         {
-            src: "assets/videos/sample-video.mp4",
-            title: "Sample Video",
-            description: "Description of the video"
-        },
-        // Add more videos here
+            src: "assets/videos/GripperMontage.mp4",
+            title: "Gripper Montage",
+            description: "A montage of my gripper project."
+        }
     ],
-    
+
     // Audio Works
     // Add your audio files to assets/audio/ folder
-    audio: [
-        {
-            src: "assets/audio/sample-audio.mp3",
-            title: "Sample Audio Track",
-            description: "Description of the audio"
-        },
-        // Add more audio files here
-    ],
-    
+    audio: [],
+
     // Documents
     // Add your PDFs and documents to assets/documents/ folder
-    documents: [
-        {
-            src: "assets/documents/sample-document.pdf",
-            title: "Sample Document",
-            description: "Description of the document",
-            icon: "📄"
-        },
-        // Add more documents here
-    ]
+    documents: []
 };

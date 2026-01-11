@@ -1,37 +1,121 @@
 // Main JavaScript for Portfolio Website
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Initialize all components
     initNavigation();
     initSmoothScroll();
-    initGallery();
-    initVideos();
-    initAudio();
-    initDocuments();
+    initHighlights();
+    // initModal(); // Modal might be needed for project pages, keeping it but unused on home for now
+    updateYear();
     initModal();
     updateYear();
 });
 
-// Mobile Navigation
+// Mobile and Dynamic Navigation
 function initNavigation() {
+    generateNavigation();
+
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');
     const navLinks = document.querySelectorAll('.nav-links li');
 
-    burger.addEventListener('click', () => {
-        // Toggle Nav
-        nav.classList.toggle('active');
-        burger.classList.toggle('active');
-    });
+    if (burger) {
+        burger.addEventListener('click', () => {
+            // Toggle Nav
+            nav.classList.toggle('active');
+            burger.classList.toggle('active');
+        });
+    }
 
     // Close menu when clicking a link
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            nav.classList.remove('active');
-            burger.classList.remove('active');
+    if (navLinks) {
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                burger.classList.remove('active');
+            });
         });
-    });
+    }
 }
+
+// Generate Navigation based on Config
+function generateNavigation() {
+    const navList = document.querySelector('.nav-links');
+    if (!navList) return;
+
+    // Determine current path depth to correctly link assets
+    // Simple heuristic: if we are in a subfolder (page has ../), prefix is ../
+    // logic: check if window.location.pathname is root or subfolder
+    const isRoot = window.location.pathname.endsWith('index.html') &&
+        (window.location.pathname.split('/').length <= 2 || window.location.pathname.includes('portfolio-site/index.html'));
+
+    // Better approach: assume relative links in HTML are correct for Home/Contact.
+    // But for generated links, we might need adjustments.
+    // However, the HTML files already established a pattern. 
+    // Let's use getPathPrefix() helper.
+    const prefix = getPathPrefix();
+
+    // Clear existing (except Home if we want to keep it, but easier to rebuild all)
+    navList.innerHTML = '';
+
+    // 1. Home Link
+    const homeLi = document.createElement('li');
+    homeLi.innerHTML = `<a href="${prefix}index.html">Home</a>`;
+    navList.appendChild(homeLi);
+
+    // 2. Category Links
+    const categories = [
+        { key: 'research', label: 'Research', url: 'research/index.html' },
+        { key: 'mechanical', label: 'Mechanical Design', url: 'mechanical-design/index.html' },
+        { key: 'photography', label: 'Photography', url: 'photography/index.html' },
+        { key: 'music', label: 'Music', url: 'music/index.html' }
+    ];
+
+    categories.forEach(cat => {
+        const projects = portfolioConfig.projects[cat.key] || [];
+        const li = document.createElement('li');
+        const catUrl = prefix + cat.url;
+
+        if (projects.length > 1) {
+            // Dropdown
+            li.className = 'dropdown';
+            let updateLinks = projects.map(p => `<a href="${prefix}${p.link}">${p.title}</a>`).join('');
+
+            // Add "View All" link
+            updateLinks = `<a href="${catUrl}"><strong>View All</strong></a>` + updateLinks;
+
+            li.innerHTML = `
+                <a href="${catUrl}" class="dropbtn">${cat.label} ▾</a>
+                <div class="dropdown-content">
+                    ${updateLinks}
+                </div>
+            `;
+        } else {
+            // Single Button
+            li.innerHTML = `<a href="${catUrl}">${cat.label}</a>`;
+        }
+        navList.appendChild(li);
+    });
+
+    // 3. Contact Link
+    const contactLi = document.createElement('li');
+    contactLi.innerHTML = `<a href="${prefix}index.html#contact">Contact</a>`;
+    navList.appendChild(contactLi);
+}
+
+// Helper to determine path prefix (./ or ../)
+function getPathPrefix() {
+    // If one of the category names is in the path, assume we are 1 level deep
+    const path = window.location.pathname;
+    if (path.includes('/research/') ||
+        path.includes('/mechanical-design/') ||
+        path.includes('/photography/') ||
+        path.includes('/music/')) {
+        return '../';
+    }
+    return '';
+}
+
 
 // Smooth Scrolling
 function initSmoothScroll() {
@@ -53,111 +137,35 @@ function initSmoothScroll() {
     });
 }
 
-// Load Gallery
-function initGallery() {
-    const galleryGrid = document.getElementById('gallery-grid');
-    
-    if (portfolioConfig.gallery.length === 0) {
-        galleryGrid.innerHTML = '<p style="text-align: center; grid-column: 1/-1;">No gallery items yet. Add images to the config.js file.</p>';
+// Load Highlights
+function initHighlights() {
+    const highlightsGrid = document.getElementById('highlights-grid');
+
+    // Only run if the element exists (i.e., on the home page)
+    if (!highlightsGrid) return;
+
+    if (!portfolioConfig.highlights || portfolioConfig.highlights.length === 0) {
+        highlightsGrid.innerHTML = '<p style="text-align: center; grid-column: 1/-1;">No highlights yet.</p>';
         return;
     }
 
-    portfolioConfig.gallery.forEach(item => {
-        const galleryItem = document.createElement('div');
-        galleryItem.className = 'gallery-item';
-        
-        // Use thumbnail if available, otherwise use main image
-        const imgSrc = item.thumb || item.src;
-        
-        galleryItem.innerHTML = `
-            <img src="${imgSrc}" alt="${item.title}" data-full="${item.src}">
-            <div class="overlay">
+    portfolioConfig.highlights.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'highlight-card';
+        card.onclick = () => window.location.href = item.link;
+
+        card.innerHTML = `
+            <img src="${item.image}" alt="${item.title}">
+            <div class="highlight-info">
+                <span class="highlight-category">${item.category}</span>
                 <h3>${item.title}</h3>
-                <p>${item.description}</p>
             </div>
         `;
-        
-        galleryGrid.appendChild(galleryItem);
+
+        highlightsGrid.appendChild(card);
     });
 }
 
-// Load Videos
-function initVideos() {
-    const videoGrid = document.getElementById('video-grid');
-    
-    if (portfolioConfig.videos.length === 0) {
-        videoGrid.innerHTML = '<p style="text-align: center; grid-column: 1/-1;">No videos yet. Add videos to the config.js file.</p>';
-        return;
-    }
-
-    portfolioConfig.videos.forEach(item => {
-        const videoItem = document.createElement('div');
-        videoItem.className = 'video-item';
-        
-        videoItem.innerHTML = `
-            <video controls>
-                <source src="${item.src}" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="video-info">
-                <h3>${item.title}</h3>
-                <p>${item.description}</p>
-            </div>
-        `;
-        
-        videoGrid.appendChild(videoItem);
-    });
-}
-
-// Load Audio
-function initAudio() {
-    const audioList = document.getElementById('audio-list');
-    
-    if (portfolioConfig.audio.length === 0) {
-        audioList.innerHTML = '<p style="text-align: center;">No audio files yet. Add audio to the config.js file.</p>';
-        return;
-    }
-
-    portfolioConfig.audio.forEach(item => {
-        const audioItem = document.createElement('div');
-        audioItem.className = 'audio-item';
-        
-        audioItem.innerHTML = `
-            <h3>${item.title}</h3>
-            <p>${item.description}</p>
-            <audio controls>
-                <source src="${item.src}" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        `;
-        
-        audioList.appendChild(audioItem);
-    });
-}
-
-// Load Documents
-function initDocuments() {
-    const documentList = document.getElementById('document-list');
-    
-    if (portfolioConfig.documents.length === 0) {
-        documentList.innerHTML = '<p style="text-align: center; grid-column: 1/-1;">No documents yet. Add documents to the config.js file.</p>';
-        return;
-    }
-
-    portfolioConfig.documents.forEach(item => {
-        const documentItem = document.createElement('div');
-        documentItem.className = 'document-item';
-        
-        documentItem.innerHTML = `
-            <div class="icon">${item.icon}</div>
-            <h3>${item.title}</h3>
-            <p>${item.description}</p>
-            <a href="${item.src}" target="_blank" rel="noopener noreferrer">View Document</a>
-        `;
-        
-        documentList.appendChild(documentItem);
-    });
-}
 
 // Image Modal
 function initModal() {
@@ -167,7 +175,7 @@ function initModal() {
     const close = document.querySelector('.close');
 
     // Add click event to all gallery images
-    document.addEventListener('click', function(e) {
+    document.addEventListener('click', function (e) {
         if (e.target.closest('.gallery-item img')) {
             const img = e.target;
             modal.style.display = 'block';
@@ -177,19 +185,19 @@ function initModal() {
     });
 
     // Close modal
-    close.onclick = function() {
+    close.onclick = function () {
         modal.style.display = 'none';
     };
 
     // Close modal when clicking outside
-    modal.onclick = function(e) {
+    modal.onclick = function (e) {
         if (e.target === modal) {
             modal.style.display = 'none';
         }
     };
 
     // Close modal with Escape key
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && modal.style.display === 'block') {
             modal.style.display = 'none';
         }
