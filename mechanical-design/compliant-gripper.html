@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compliant Gripper Finger Design - Kevin Cotellesso</title>
+    <title>Compliant Gripper Design - Kevin Cotellesso</title>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 
@@ -26,16 +26,56 @@
     </header>
 
     <main>
-        <section class="project-hero">
+        <section class="project-hero video-hero">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="../assets/videos/GripperMontage.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="hero-overlay"></div>
             <div class="container">
-                <h1 id="project-title">Compliant Gripper Finger Design</h1>
+                <h1 id="project-title">Compliant Gripper Design</h1>
                 <p id="project-subtitle">Mechanical Design / 2025</p>
             </div>
         </section>
 
+        <!-- Section 1: Articulated Compliant Gripper -->
         <section class="section">
             <div class="container project-content">
                 <div class="project-description" style="grid-column: 1 / -1;">
+                    <h2>Articulated Compliant Gripper</h2>
+
+                    <p>The MATE ROV Competition is an underwater robotics competition where a remotely operated
+                        submersible must measure and manipulate objects 15' below the surface of the water. I have been
+                        on Rose-Hulman’s team for four years.</p>
+                    <p>My first two years on the team, I designed a durable, performant, and easy-to-manufacture
+                        compliant gripper system. The gripper is cable-actuated; a servo winch pulls a bicycle shifter
+                        cable, which runs through a wrist joint along the axis of rotation and pulls the gripper closed
+                        via a bearing. This allows for unlimited rotation of the gripper in either direction.</p>
+                    <p>Its three-finger design can grasp objects of various sizes, and its compliant fingers distribute
+                        gripping force, allowing it to handle delicate objects (Red Solo Cup?) without damaging them.
+                        During our competition, we successfully manipulated all underwater game elements using this
+                        gripper.</p>
+                </div>
+
+                <div class="project-media-grid" style="grid-column: 1 / -1; margin-top: 1rem;">
+                    <div class="media-item">
+                        <img src="../assets/images/gripper/gripper_1.png" alt="Articulated Gripper"
+                            style="width: 100%; border-radius: 8px; box-shadow: var(--shadow);">
+                    </div>
+                    <div class="media-item">
+                        <img src="../assets/images/gripper/gripper_2.png" alt="Gripper CAD View"
+                            style="width: 100%; border-radius: 8px; box-shadow: var(--shadow);">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Compliant Gripper Finger Design -->
+        <section class="section" style="background-color: var(--light-bg);">
+            <div class="container project-content">
+                <div class="project-description" style="grid-column: 1 / -1;">
+                    <h2>Compliant Gripper Finger Design</h2>
+
                     <h3>MATE Compliant Gripper Design: Continuous Motion Estimation</h3>
                     <p>I designed the fingers of the MATE Compliant Gripper in SOLIDWORKS by modeling their shape
                         wrapped around a circular object, and then unwrapping that shape. This results in geometry that
@@ -44,19 +84,23 @@
                     <!-- Slideshow 1 -->
                     <div class="slideshow-container" id="slideshow-1">
                         <div class="mySlides fade">
-                            <img src="../assets/images/gripper/gripper_wrapdesign_1.png" style="width:100%">
+                            <img src="../assets/images/gripper/gripper_wrapdesign_1.png" style="width:100%"
+                                alt="Wrap Design 1">
                             <div class="text">Wrap Design 1</div>
                         </div>
                         <div class="mySlides fade">
-                            <img src="../assets/images/gripper/gripper_wrapdesign_2.png" style="width:100%">
+                            <img src="../assets/images/gripper/gripper_wrapdesign_2.png" style="width:100%"
+                                alt="Wrap Design 2">
                             <div class="text">Wrap Design 2</div>
                         </div>
                         <div class="mySlides fade">
-                            <img src="../assets/images/gripper/gripper_wrapdesign_3.png" style="width:100%">
+                            <img src="../assets/images/gripper/gripper_wrapdesign_3.png" style="width:100%"
+                                alt="Wrap Design 3">
                             <div class="text">Wrap Design 3</div>
                         </div>
                         <div class="mySlides fade">
-                            <img src="../assets/images/gripper/gripper_wrapdesign_4.png" style="width:100%">
+                            <img src="../assets/images/gripper/gripper_wrapdesign_4.png" style="width:100%"
+                                alt="Wrap Design 4">
                             <div class="text">Wrap Design 4</div>
                         </div>
                         <a class="prev" onclick="plusSlides(-1, 'slideshow-1')">&#10094;</a>
@@ -74,25 +118,31 @@
                     <!-- Slideshow 2 -->
                     <div class="slideshow-container" id="slideshow-2">
                         <div class="mySlides fade">
-                            <img src="../assets/images/gripper/gripper_rigiddesign_1.png" style="width:100%">
+                            <img src="../assets/images/gripper/gripper_rigiddesign_1.png" style="width:100%"
+                                alt="Rigid Design 1">
                             <div class="text">Rigid Design 1</div>
                         </div>
                         <div class="mySlides fade">
-                            <img src="../assets/images/gripper/gripper_rigiddesign_2.png" style="width:100%">
+                            <img src="../assets/images/gripper/gripper_rigiddesign_2.png" style="width:100%"
+                                alt="Rigid Design 2">
                             <div class="text">Rigid Design 2</div>
                         </div>
                         <div class="mySlides fade">
-                            <img src="../assets/images/gripper/gripper_rigiddesign_3.png" style="width:100%">
+                            <img src="../assets/images/gripper/gripper_rigiddesign_3.png" style="width:100%"
+                                alt="Rigid Design 3">
                             <div class="text">Rigid Design 3</div>
                         </div>
                         <div class="mySlides fade">
-                            <img src="../assets/images/gripper/gripper_rigiddesign_4.png" style="width:100%">
+                            <img src="../assets/images/gripper/gripper_rigiddesign_4.png" style="width:100%"
+                                alt="Rigid Design 4">
                             <div class="text">Rigid Design 4</div>
                         </div>
                         <a class="prev" onclick="plusSlides(-1, 'slideshow-2')">&#10094;</a>
                         <a class="next" onclick="plusSlides(1, 'slideshow-2')">&#10095;</a>
                     </div>
                 </div>
+            </div>
+        </section>
     </main>
 
     <footer>

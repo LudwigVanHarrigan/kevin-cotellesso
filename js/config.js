@@ -39,8 +39,7 @@ const portfolioConfig = {
             { title: "Diffusion Modeling", link: "research/diffusion-modeling.html" }
         ],
         mechanical: [
-            { title: "Articulated Compliant Gripper", link: "mechanical-design/articulated-gripper.html" },
-            { title: "Compliant Finger Design", link: "mechanical-design/compliant-finger.html" },
+            { title: "Compliant Gripper Design", link: "mechanical-design/compliant-gripper.html" },
             { title: "Shade Shifter", link: "mechanical-design/shade-shifter.html" },
             { title: "Wrench Whisperer", link: "mechanical-design/wrench-whisperer.html" },
             { title: "Tilt-A-Bowl", link: "mechanical-design/tilt-a-bowl.html" },
