@@ -29,34 +29,42 @@
         <section class="project-hero">
             <div class="container">
                 <h1 id="project-title">Automatic Chicken Door</h1>
-                <p id="project-subtitle">Mechanical Design / 2025</p>
+                <p id="project-subtitle">Solving Everyday Problems - 2016</p>
             </div>
         </section>
 
         <section class="section">
             <div class="container project-content">
-                <div class="project-media project-media-grid">
+                <div class="project-media">
                     <figure class="media-item">
-                        <img id="project-main-image" src="../assets/images/gallery/chickendoor_1.jpg"
+                        <img id="project-main-image" src="../assets/images/chickendoor/chickendoor_main.jpg"
                             alt="Automatic Chicken Door">
-                        <figcaption>Automatic Chicken Door</figcaption>
+                        <figcaption>12yo me with my chicken door</figcaption>
                     </figure>
-                    <figure class="media-item">
-                        <img src="../assets/images/gallery/chickendoor_2.jpg" alt="Chicken Door Mechanism">
-                        <figcaption>Internal Mechanism</figcaption>
-                    </figure>
-                    <figure class="media-item">
-                        <img src="../assets/images/gallery/chickendoor_3.jpg" alt="Chicken Door Installed">
-                        <figcaption>Installed on Coop</figcaption>
-                    </figure>
-                    <figure class="media-item">
-                        <img src="../assets/images/gallery/chickendoor_4.jpg" alt="Chicken Door Controller">
-                        <figcaption>Controller Assembly</figcaption>
-                    </figure>
-                    <figure class="media-item">
-                        <img src="../assets/images/gallery/chickendoor_5.jpg" alt="Chicken Door Side View">
-                        <figcaption>Side Profile</figcaption>
-                    </figure>
+                    <div class="slideshow-container" id="chickendoor-slideshow">
+                        <div class="mySlides fade">
+                            <img src="../assets/images/chickendoor/chickendoor_leadscrew_bottom.jpg" style="width:100%"
+                                alt="Leadscrew Bottom Detail">
+                            <div class="text">Leadscrew Bottom Detail</div>
+                        </div>
+                        <div class="mySlides fade">
+                            <img src="../assets/images/chickendoor/chickendoor_leadscrew_top.jpg" style="width:100%"
+                                alt="Leadscrew Top Detail">
+                            <div class="text">Leadscrew Top Detail</div>
+                        </div>
+                        <div class="mySlides fade">
+                            <img src="../assets/images/chickendoor/chickendoor_motor.jpg" style="width:100%"
+                                alt="Motor Assembly">
+                            <div class="text">Motor Assembly</div>
+                        </div>
+                        <div class="mySlides fade">
+                            <img src="../assets/images/chickendoor/chickendoor_output.jpg" style="width:100%"
+                                alt="Calibration and Diagnostic Output">
+                            <div class="text">Calibration and diagnostic output</div>
+                        </div>
+                        <a class="prev" onclick="plusSlides(-1, 'chickendoor-slideshow')">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1, 'chickendoor-slideshow')">&#10095;</a>
+                    </div>
                 </div>
                 <div class="project-description">
                     <h3>About this Project</h3>
@@ -70,10 +78,10 @@
                         chicken coop and let chickens in an out in the daytime, while keeping them safe at night.
                         <br><br>
                         <strong>How does it work?</strong> In the morning, when it is bright enough outside, the
-                        photoresistor detects the change and an Arduino microcontroller commands the motor to start
-                        lifting the door. When the door is all the way up, a limit switch is pressed, telling the
-                        Arduino to stop the motor. The opposite process occurs when light levels drop below a certain
-                        amount at night.
+                        photoresistor detects the change in light levels and an Arduino microcontroller commands the
+                        motor to start lifting the door. When the door is all the way up, a limit switch is pressed,
+                        telling the Arduino to stop the motor. The opposite process occurs when light levels drop below
+                        a certain amount at night.
                     </p>
                     <br>
                     <h3>Specs</h3>

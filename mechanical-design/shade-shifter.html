@@ -26,17 +26,36 @@
     </header>
 
     <main>
-        <section class="project-hero">
+        <section class="project-hero"
+            style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('../assets/images/shadeshifter/shadeshifter_2.png'); background-size: cover; background-position: center;">
             <div class="container">
                 <h1 id="project-title">Shade Shifter</h1>
-                <p id="project-subtitle">Mechanical Design / 2025</p>
+                <p id="project-subtitle">Everyday Solutions - 2022</p>
             </div>
         </section>
 
         <section class="section">
             <div class="container project-content">
                 <div class="project-media">
-                    <img id="project-main-image" src="../assets/images/gallery/photo3.png" alt="Shade Shifter">
+                    <div class="slideshow-container" id="shadeshifter-slideshow">
+                        <div class="mySlides fade">
+                            <img src="../assets/images/shadeshifter/shadeshifter_3.jpg" style="width:100%"
+                                alt="The Shade Shifter blocking the light from a flashlight">
+                            <div class="text">The Shade Shifter blocking the light from a flashlight</div>
+                        </div>
+                        <div class="mySlides fade">
+                            <img src="../assets/images/shadeshifter/shadeshifter_4.png" style="width:100%"
+                                alt="You when the shade shifter blocks the light properly">
+                            <div class="text">You when the shade shifter blocks the light properly.</div>
+                        </div>
+                        <div class="mySlides fade">
+                            <img src="../assets/images/shadeshifter/shadeshifter_1.jpg" style="width:100%"
+                                alt="An early tension gantry prototype">
+                            <div class="text">An early tension gantry prototype</div>
+                        </div>
+                        <a class="prev" onclick="plusSlides(-1, 'shadeshifter-slideshow')">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1, 'shadeshifter-slideshow')">&#10095;</a>
+                    </div>
                 </div>
                 <div class="project-description">
                     <h3>About this Project</h3>
@@ -55,30 +74,30 @@
                         connected to two winches at the frame corners; the (x,y) position of the shade is controlled
                         precisely by spooling the two winches in and out.
                     </p>
-                    <br>
-                    <h3>Specs</h3>
-                    <ul>
-                        <li>0.8m square 2-axis gantry powered by two Lego EV3 servomotors</li>
-                        <li>OpenCV/Python code uses webcam video to detect light</li>
-                    </ul>
-                    <br>
-                    <h3>Relevant Skills</h3>
-                    <ul>
-                        <li><strong>Socket Communication:</strong> Computer vision code on Linux laptop sent (x,y)
-                            coordinates to control code on Lego EV3.</li>
-                        <li><strong>Computer vision:</strong> Detected bright areas, calculated XY position</li>
-                        <li><strong>Inverse Kinematics:</strong> Calculated string length for a given XY position</li>
-                        <li><strong>Controls:</strong> Implemented proportional position feedback control in Python</li>
-                    </ul>
+
                 </div>
             </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <h3>Gallery</h3>
-                <div class="gallery-grid" id="project-gallery">
-                    <!-- Additional images -->
+            <div class="container" style="margin-top: 2rem;">
+                <div class="project-media-grid">
+                    <div class="project-description">
+                        <h3>Specs</h3>
+                        <ul>
+                            <li>0.8m square 2-axis gantry powered by two Lego EV3 servomotors</li>
+                            <li>OpenCV/Python code uses webcam video to detect light</li>
+                        </ul>
+                    </div>
+                    <div class="project-description">
+                        <h3>Relevant Skills</h3>
+                        <ul>
+                            <li><strong>Socket Communication:</strong> Computer vision code on Linux laptop sent (x,y)
+                                coordinates to control code on Lego EV3.</li>
+                            <li><strong>Computer vision:</strong> Detected bright areas, calculated XY position</li>
+                            <li><strong>Inverse Kinematics:</strong> Calculated string length for a given XY position
+                            </li>
+                            <li><strong>Controls:</strong> Implemented proportional position feedback control in Python
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>

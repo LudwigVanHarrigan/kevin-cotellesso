@@ -23,10 +23,10 @@ const portfolioConfig = {
             link: "research/project1.html"
         },
         {
-            image: "assets/images/gallery/photo2.png",
-            title: "Urban Lights",
+            image: "assets/images/photography/frozen_world/P1170189.JPG",
+            title: "Frozen World",
             category: "Photography",
-            link: "photography/project1.html"
+            link: "photography/frozen-world.html"
         }
     ],
 
@@ -48,8 +48,13 @@ const portfolioConfig = {
             { title: "Chain Mail", link: "mechanical-design/chain-mail.html" }
         ],
         photography: [
-            { title: "Urban Lights", link: "photography/project1.html" },
-            { title: "More Photographyyy", link: "photography/project2.html" }
+            { title: "Frozen World", link: "photography/frozen-world.html", image: "assets/images/photography/frozen_world/P1170189.JPG" },
+            { title: "Animals", link: "photography/animals.html", image: "assets/images/photography/animals/20230911_033905000_iOS.jpg" },
+            { title: "Flowers", link: "photography/flowers.html", image: "assets/images/photography/flowers/20240503_162208000_iOS.jpg" },
+            { title: "Humans", link: "photography/humans.html", image: "assets/images/photography/humans/20240706_030817000_iOS.jpg" },
+            { title: "Insects", link: "photography/insects.html", image: "assets/images/photography/insects/20240609_024612000_iOS.jpg" },
+            { title: "Nature", link: "photography/nature.html", image: "assets/images/photography/nature/20240314_030255000_iOS.jpg" },
+            { title: "Vehicles", link: "photography/vehicles.html", image: "assets/images/photography/vehicles/20231116_174803000_iOS.jpg" }
         ],
         music: []
     },
