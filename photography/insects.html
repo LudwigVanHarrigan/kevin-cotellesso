@@ -195,11 +195,9 @@
 
         async function loadImages() {
             try {
-                const response = await fetch(imageDirectory);
-                const text = await response.text();
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(text, 'text/html');
-                const links = doc.querySelectorAll('a');
+                // Fetch the manifest JSON instead of scraping the directory
+                const response = await fetch(imageDirectory + 'manifest.json');
+                const imageList = await response.json();
 
                 const wrapper = document.querySelector('.slideshow-wrapper');
                 // Keep the navigation buttons
@@ -212,13 +210,13 @@
 
                 let imageCount = 0;
 
-                links.forEach(link => {
-                    const href = link.getAttribute('href');
-                    if (href.match(/\.(jpe?g|png|gif)$/i)) {
+                imageList.forEach(filename => {
+                    // Check for valid extensions just in case (though manifest builder handles this)
+                    if (filename.match(/\.(jpe?g|png|gif|webp)$/i)) {
                         const slide = document.createElement('div');
                         slide.className = 'slide';
-                        // Determine if full path or relative (listing usually gives filename)
-                        const imgSrc = imageDirectory + href;
+
+                        const imgSrc = imageDirectory + filename;
 
                         const img = document.createElement('img');
                         img.src = imgSrc;
@@ -235,14 +233,11 @@
                     slides = wrapper.querySelectorAll('.slide');
                     showSlide(0);
                 } else {
-                    console.error("No images found in directory listing.");
+                    console.error("No images found in manifest.");
                 }
 
             } catch (error) {
                 console.error('Error loading images:', error);
-                // Fallback: if fetch fails, slides might still be [] if we cleared them.
-                // In a real scenario, we might want to keep hardcoded fallback, 
-                // but user explicitly asked for autoload.
             }
         }
 
