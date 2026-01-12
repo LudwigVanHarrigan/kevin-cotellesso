@@ -2,6 +2,8 @@
 
 A modern, responsive portfolio website framework designed to showcase creative work across multiple mediums including photos, videos, audio, and documents.
 
+Made entirely using Gemini 3 pro in Google Antigravity, expertly prompted by me.
+
 ## 🌟 Features
 
 - **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
