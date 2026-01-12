@@ -17,10 +17,16 @@ const portfolioConfig = {
     // Highlights for Home Page
     highlights: [
         {
-            image: "assets/images/gallery/photo1.png",
-            title: "Geometric Harmony",
+            image: "assets/images/gripper/gripper_1.png",
+            title: "Compliant Gripper Design",
+            category: "Mechanical Design",
+            link: "mechanical-design/compliant-gripper.html"
+        },
+        {
+            image: "assets/images/gallery/photo3.png",
+            title: "Jaw-based HMI",
             category: "Research",
-            link: "research/project1.html"
+            link: "research/jaw-hmi.html"
         },
         {
             image: "assets/images/photography/frozen_world/P1170189.JPG",
