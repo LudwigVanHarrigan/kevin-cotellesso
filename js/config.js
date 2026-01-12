@@ -39,7 +39,6 @@ const portfolioConfig = {
     // Project Data by Category (for future use/dynamic loading if needed)
     projects: {
         research: [
-            { title: "Geometric Harmony", link: "research/project1.html" },
             { title: "Jaw-based HMI", link: "research/jaw-hmi.html" },
             { title: "Microextrusion Optimization", link: "research/microextrusion-optimization.html" },
             { title: "Diffusion Modeling", link: "research/diffusion-modeling.html" }
