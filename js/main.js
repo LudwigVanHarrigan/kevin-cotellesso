@@ -84,7 +84,7 @@ function generateNavigation() {
             updateLinks = `<a href="${catUrl}"><strong>View All</strong></a>` + updateLinks;
 
             li.innerHTML = `
-                <a href="${catUrl}" class="dropbtn">${cat.label} ▾</a>
+                <a href="${catUrl}" class="dropbtn">${cat.label} <span class="dropdown-arrow">▾</span></a>
                 <div class="dropdown-content">
                     ${updateLinks}
                 </div>

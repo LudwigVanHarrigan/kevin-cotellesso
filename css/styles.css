@@ -766,11 +766,15 @@ footer {
 @media screen and (max-width: 768px) {
     .dropdown-content {
         position: static;
-        display: none;
+        display: none !important;
         /* hidden by default on mobile */
         box-shadow: none;
         background-color: rgba(255, 255, 255, 0.1);
         width: 100%;
+    }
+
+    .dropdown-arrow {
+        display: none;
     }
 
     .dropdown.active .dropdown-content {
